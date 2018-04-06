@@ -7,14 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TwitterSearchBot.Contracts;
 using TwitterSearchBot.Impl;
-using System.Net.Http;
-using Google.Apis.Auth.OAuth2;
-using System.IO;
-using Google.Apis.Sheets.v4;
-using System.Threading;
-using Google.Apis.Sheets.v4.Data;
-using Google.Apis.Util.Store;
-using Google.Apis.Services;
 using TwitterSearchBot.Types;
 
 namespace TwitterSearchBot
