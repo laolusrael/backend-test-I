@@ -8,6 +8,7 @@ namespace TwitterSearchBot.Types
 {
     public class FollowData
     {
+        public string EmailAddress;
         public string TwitterUsername;
         public int NumOfFollowers;
     }

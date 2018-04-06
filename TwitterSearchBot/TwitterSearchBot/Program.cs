@@ -60,13 +60,13 @@ namespace TwitterSearchBot
                 // Write profiles to sheet
                 foreach(var tweet in tweets)
                 {
-                    profileSheet.WriteProfile(new FollowData { NumOfFollowers = tweet.user.followers_count, TwitterUsername = tweet.user.screen_name });
+                    profileSheet.WriteProfile(new FollowData { EmailAddress = tweet.user.email, NumOfFollowers = tweet.user.followers_count, TwitterUsername = tweet.user.screen_name });
                 }
 
                 // Show profiles  in console
                 foreach(var tweet in tweets)
                 {
-                    Console.WriteLine($"Name:       @{tweet.user.screen_name}");
+                    Console.WriteLine($"Name:       @{tweet.user.screen_name} ({tweet.user.email})");
                     Console.WriteLine($"Followers:  {tweet.user.followers_count}");
                     Console.WriteLine($"{tweet.text}");
                     Console.WriteLine("------");

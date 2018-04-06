@@ -54,7 +54,7 @@ namespace TwitterSearchBot.Impl
                 return;
 
 
-            var data =  new List<object> { rowValue.TwitterUsername, rowValue.NumOfFollowers};
+            var data =  new List<object> { rowValue.EmailAddress ?? "", rowValue.TwitterUsername, rowValue.NumOfFollowers};
 
             var sheetService = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
             {
@@ -62,7 +62,7 @@ namespace TwitterSearchBot.Impl
                 ApplicationName = _appName
             });
 
-            var range = "A2:B";
+            var range = "A2:C";
 
             var valueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.RAW;
             var insertOption = SpreadsheetsResource.ValuesResource.AppendRequest.InsertDataOptionEnum.INSERTROWS;
@@ -90,7 +90,7 @@ namespace TwitterSearchBot.Impl
             if (rows.Any() == false)
                 return;
 
-            var data = rows.Select(r => new { r.TwitterUsername, r.NumOfFollowers }).ToList(); 
+            var data = rows.Select(r => new { r.EmailAddress, r.TwitterUsername, r.NumOfFollowers }).ToList(); 
 
             var sheetService = new SheetsService(new Google.Apis.Services.BaseClientService.Initializer()
             {

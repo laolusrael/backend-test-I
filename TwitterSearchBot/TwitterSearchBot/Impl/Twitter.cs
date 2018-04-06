@@ -47,11 +47,5 @@ namespace TwitterSearchBot.Impl
             return new TweetSearch(_twitterContext);
 
         }
-
-        public async Task<ITweetStream> CreateTweetStreamInstance()
-        {
-            await _InitContext();
-            return new TweetStream(_twitterContext);
-        }
     }
 }

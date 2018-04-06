@@ -22,7 +22,7 @@ namespace TwitterSearchBot.Impl
         {
 
             var searchQuery = from search in _twitterContext.Search
-                                where search.Type == SearchType.Search && search.Query == string.Join("+", tags).Replace("#", "")
+                                where search.Type == SearchType.Search && search.Query == string.Join(",", tags)
                                 select search;
             if(_lastId != 0)
             {
@@ -52,7 +52,8 @@ namespace TwitterSearchBot.Impl
                                                          name            = s.User.Name,
                                                          screen_name     = s.User.ScreenNameResponse,
                                                          location        = s.User.Location,
-                                                         url             = s.User.Url
+                                                         url             = s.User.Url,
+                                                         email           = s.User.Email
                                                      }
                                             });
 

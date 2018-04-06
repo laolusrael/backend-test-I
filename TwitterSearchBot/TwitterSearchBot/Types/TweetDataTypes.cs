@@ -27,6 +27,7 @@ namespace TwitterSearchBot.Types
         public bool @protected;
         public int followers_count;
         public int friends_count;
+        internal string email;
     }
 
 
